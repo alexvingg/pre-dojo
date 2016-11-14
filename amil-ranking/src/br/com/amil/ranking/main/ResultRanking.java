@@ -106,15 +106,25 @@ public class ResultRanking {
 			List<Ranking> rankings = match.getRankings();
 			Collections.sort(rankings);
 			System.out.println("Match: " + match.getId());
+
+			int count = 0;
+
 			for (Ranking ranking : rankings) {
                 String award = "";
                 if(ranking.getDead() == 0){
                     award = "**";
                 }
+
+                String weapon = "";
+
+				if(0 == count){
+					weapon = getPrefferedWeapon(ranking) != null ? " / Preffered Weapon: " + getPrefferedWeapon(ranking).getName() : "";
+					count++;
+				}
+
 				System.out.println(ranking.getPlayer().getName() + " - Kills: " +
                     ranking.getKill() + " / Deads: " + ranking.getDead() +
-                    " / Preffered Weapon: " + getPrefferedWeapon(ranking).getName() +
-                    " " + award);
+					weapon + " " + award);
 			}
 			System.out.println("");
 		}

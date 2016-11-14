@@ -62,7 +62,7 @@ public class ResultRankingTest {
         Kill kill2 = new Kill();
         kill2.setPlayerKiller(p1);
         kill2.setPlayerDead(p2);
-        kill2.setWeapon(new Weapon("AK47"));
+        kill2.setWeapon(new Weapon("M16"));
         kill2.setDate(LocalDateTime.now().plusMinutes(3));
 
         Kill kill3 = new Kill();
@@ -120,8 +120,8 @@ public class ResultRankingTest {
             weaponWin = result.getPrefferedWeapon(match.getRankings().get(0));
         }
 
-		assertEquals("Player win",win.getName(), p1.getName());
-        assertEquals("Player Weapon win", weaponWin.getName(), new Weapon("M16").getName());
-        assertEquals("Player Award", deads, 0);
+		assertEquals("Player win", p1.getName(), win.getName());
+        assertEquals("Player Weapon win", new Weapon("M16").getName(), weaponWin.getName());
+        assertEquals("Player Award", 0, deads);
 	}
 }
