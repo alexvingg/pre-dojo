@@ -1,2 +1,8 @@
 Coloque aqui suas instruções ou comentários que ache útil/relevantes para possamos ler 
 quando estivermos avaliando a sua solução
+
+Executar o jar dentro da pasta pre-dojo/amil-ranking/target/
+
+java -cp amil-ranking-0.0.1-SNAPSHOT.jar br.com.amil.ranking.main.Main
+
+Após a execução informar o caminho do log.
